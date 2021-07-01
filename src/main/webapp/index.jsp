@@ -3,6 +3,7 @@
 <html>
 <head>
     <title><%= "some title" %></title>
+    <style><%@include file="css/main.css"%></style>
 </head>
 <body>
     <c:if test="true">
