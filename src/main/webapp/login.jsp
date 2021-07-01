@@ -21,7 +21,8 @@
     <title>Login</title>
 </head>
 <body>
-<form method="POST" action="login.jsp">
+<h1>HEADER</h1>
+<form method="POST" action="/login.jsp">
     <label for="username">Username</label>
     <input type="text" id="username" name="username" placeholder="username">
     <br>
