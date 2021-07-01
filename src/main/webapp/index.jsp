@@ -3,7 +3,7 @@
 <html>
 <head>
     <title><%= "some title" %></title>
-    <style><%@include file="css/main.css"%></style>
+<%--    <style><%@include file="css/main.css"%></style>--%>
 </head>
 <body>
     <c:if test="true">
@@ -13,7 +13,7 @@
         <h1>single letter variable names are good</h1>
     </c:if>
 <script>
-    <%@include file="js/test.js"%>
+<%--    <%@include file="js/test.js"%>--%>
 </script>
 </body>
 </html>
