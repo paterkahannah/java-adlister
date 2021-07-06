@@ -26,9 +26,9 @@
     <div>
         <label for="size">Size</label>
         <select id="size" name="size">
-            <option>Marinara</option>
-            <option>BBQ</option>
-            <option>Alfredo</option>
+            <option>small</option>
+            <option>mediun</option>
+            <option>large</option>
         </select>
     </div>
     <label for="toppings">Toppings</label>

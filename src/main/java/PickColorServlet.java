@@ -9,11 +9,12 @@ import java.io.IOException;
 public class PickColorServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        request.getRequestDispatcher("viewcolor.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("viewcolor.jsp").forward(req, resp);
-//        resp.sendRedirect("viewcolor.jsp");
+        String color = req.getParameter("color");
+        resp.sendRedirect("/viewcolor.jsp?color=" + color);
     }
 }
