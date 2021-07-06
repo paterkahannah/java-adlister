@@ -5,15 +5,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "PickColorServlet", urlPatterns = "/pickcolor")
-public class PickColorServlet extends HttpServlet {
+@WebServlet(name = "IncorrectServlet", urlPatterns = "/incorrect")
+public class IncorrectServlet extends HttpServlet {
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("viewcolor.jsp").forward(req, resp);
-//        resp.sendRedirect("viewcolor.jsp");
+        resp.getWriter().println("<h1>You Lost!</h1>");
     }
 }
