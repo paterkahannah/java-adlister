@@ -2,19 +2,19 @@ import java.io.Serializable;
 
 public class Quote implements Serializable {
 
-    private int id; // ?
+    private long id;
     private String content;
     private Author author;
 
     public Quote() {}
 
     public Quote(int id, String content, Author author) {
-        this.id = id; // ?
+        this.id = id;
         this.content = content;
         this.author = author;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 

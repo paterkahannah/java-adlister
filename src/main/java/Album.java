@@ -2,7 +2,7 @@ import java.io.Serializable;
 
 public class Album implements Serializable {
 
-    private int id;
+    private long id;
     private String artist;
     private String name;
     private int releaseDate;
@@ -11,7 +11,8 @@ public class Album implements Serializable {
 
     public Album() {}
 
-    public Album(String artist, String name, int releaseDate, String genre, double sales) {
+    public Album(int id, String artist, String name, int releaseDate, String genre, double sales) {
+        this.id  =id;
         this.artist = artist;
         this.name = name;
         this.releaseDate = releaseDate;
@@ -19,7 +20,7 @@ public class Album implements Serializable {
         this.sales = sales;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
