@@ -7,14 +7,13 @@
 </head>
 <body>
 
-<% String username = (String) session.getAttribute("username"); %>
-
+<%--<% String username = (String) request.getParameter("username"); %>--%>
     <jsp:include page="../partials/navbar.jsp" />
 
     <div class="container">
         <h1>Viewing your profile.</h1>
-        <h2>Hello <%=username%>!</h2>
-<%--        can't make this shwo username--%>
+        <h2>Hello ${username}</h2>
+<%--        can't make this show username--%>
     </div>
 
 </body>
