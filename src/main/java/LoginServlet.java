@@ -9,28 +9,28 @@ import java.io.IOException;
 @WebServlet(name = "LoginServlet", urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (request.getSession().getAttribute("isAdmin") != null) {
-            response.sendRedirect("WEB-INF/secret-admin-page.jsp"); /////
+        if (request.getSession().getAttribute("user") != null) {
+            response.sendRedirect("WEB-INF/profile");
             return;
         }
 
-        request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response); /////
+        request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         boolean isAdmin = username.equals("admin") && password.equals("password");
-        boolean user = username.equals("user") && password.equals("userpass");
+        boolean user = username.equals("user") && password.equals("userpass"); // created new key
 
-        HttpSession session = request.getSession();
-        session.setAttribute("username", username);
+        HttpSession session = request.getSession(); // capturing session and storing in value
+//        session.setAttribute("username", username);
 
         if (isAdmin) {
             session.setAttribute("isAdmin", true);
             response.sendRedirect("/secret-admin-page");
         } else if (user) {
-            session.setAttribute("user", true);
+            session.setAttribute("user", username); // creating key/value pair // here we are defining "user" to contain the user value that will be captured on line 21
             response.sendRedirect("/profile");
         }else {
             response.sendRedirect("/login");

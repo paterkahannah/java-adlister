@@ -9,13 +9,13 @@ import java.io.IOException;
 @WebServlet(name = "ViewProfileServlet", urlPatterns = "/profile")
 public class ViewProfileServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("WEB-INF/profile.jsp").forward(request, response); /////
 
         HttpSession session = request.getSession();
 
-        if ((Boolean)session.getAttribute("user") == null || (Boolean)session.getAttribute("user") == false) { // this must be caste to the correct type, get attribute always return a generic object, we must make it something.
-            response.sendRedirect("/login");
+        if ((Boolean)session.getAttribute("user") == null) { // if this equals null it means no user has logged in yet
+            response.sendRedirect("/login"); // so they will be redirected to login page
             return;
         }
+        request.getRequestDispatcher("WEB-INF/profile.jsp").forward(request, response); // else directedd to profile page
     }
 }
