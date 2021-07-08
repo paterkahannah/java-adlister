@@ -21,3 +21,6 @@ public class HelloWorldServlet extends HttpServlet {
         }
     }
 }
+
+
+// DoGet method generally is used to query or to get some information from the server Dopost is generally used to update or post some information to the server

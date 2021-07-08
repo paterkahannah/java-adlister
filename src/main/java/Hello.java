@@ -25,4 +25,7 @@ public class Hello extends HttpServlet {
 // req - the user clicking on something, for example
 // response - what the server sends back, like an html response (a valid html document)
 // our java code lives server-side! (javascript resides on the client-side)
-// A servlet is a Java class that extends the HttpServlet class from the servlet library. A servlet's most basic functionality is to handle HTTP requests and responses.
+// SERVLET: A servlet is a Java class that extends the HttpServlet class from the servlet library. A servlet's most basic functionality is to handle HTTP requests and responses.
+// INCLUDES: 'extends HttpServlet',
+//            '@WebServlet(name = "HelloServlet", urlPatterns = "/hello")' // This allows us to specify what URL this servlet should handle.
+//             @Override :Implement a protected doGet AND/OR doPost method that accepts two parameters: HttpServletRequest, and HttpServletResponse'
