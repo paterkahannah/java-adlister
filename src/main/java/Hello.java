@@ -12,7 +12,7 @@ public class Hello extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
         String name = req.getParameter("name");
         res.setContentType("text/html");
-        PrintWriter out = res.getWriter();
+        PrintWriter out = res.getWriter(); // getWriter is like printing something out to the browser as opposed to souting in the console
 
         if (name == null) {
             out.println("<h1>Hello, World!</h1>");

@@ -10,7 +10,7 @@ public class HelloWorldServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
-        String name = req.getParameter("name");
+        String name = req.getParameter("name"); // capturing a value in the url bar!
         res.setContentType("text/html");
         PrintWriter out = res.getWriter();
 
