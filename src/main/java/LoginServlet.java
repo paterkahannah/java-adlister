@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-// THIS DOESN'T WORK
+
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 
@@ -18,9 +18,9 @@ public class LoginServlet extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         if (username.equals("admin") && password.equals("password")) {
-            resp.sendRedirect("/profile");
+            resp.sendRedirect("/profile.jsp");
         } else {
-            resp.sendRedirect("/login");
+            resp.sendRedirect("/login.jsp");
         }
     }
 }
