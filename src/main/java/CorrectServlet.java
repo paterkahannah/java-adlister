@@ -7,10 +7,6 @@ import java.io.IOException;
 
 @WebServlet(name = "CorrectServlet", urlPatterns = "/correct")
 public class CorrectServlet extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
