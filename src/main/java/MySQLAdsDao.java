@@ -7,6 +7,7 @@ import java.util.List;
 public class MySQLAdsDao implements Ads {
 
     private Connection connection;
+    List<Ad> ads;
 
     public MySQLAdsDao(Config config) throws SQLException {
         DriverManager.registerDriver(new Driver());
@@ -15,8 +16,8 @@ public class MySQLAdsDao implements Ads {
 
     @Override
     public List<Ad> all() {
-        List<Ad> ads = new ArrayList<>();
         try {
+            ads = new ArrayList<>();
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM ads");
             while (resultSet.next()) {
@@ -35,7 +36,7 @@ public class MySQLAdsDao implements Ads {
 
     @Override
     public Long insert(Ad ad) {
-        String sql = String.format("insert into ads (user_id, title, description) values(%d, '%s', '%s')", ad.getUserId() ,ad.getTitle(), ad.getDescription());
+        String sql = String.format("insert into ads (user_id, title, description) values(%d,'%s','%s')", ad.getUserId() ,ad.getTitle(), ad.getDescription());
         long lastId = 0;
         try {
             Statement stmt = connection.createStatement();
