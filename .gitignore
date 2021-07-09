@@ -1,3 +1,5 @@
 *.iml
 target/
 .idea/
+src/main/java/jdbcLec.java
+src/main/java/Config.java

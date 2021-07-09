@@ -4,7 +4,7 @@
     <title>Title</title>
 </head>
 <body>
-
+<%--pizza order page and form to collect data--%>
 <form action="pizza-order" method="POST">
     <h2>Build your own pizza!</h2>
     <div>
