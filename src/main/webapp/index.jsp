@@ -3,7 +3,8 @@
 <html>
 <head>
     <title><%= "some title" %></title>
-<%--    <style><%@include file="css/main.css"%></style>--%>
+<%--    using a css file, example--%>
+    <style><%@include file="css/main.css"%></style>
 </head>
 <body>
     <c:if test="true">
@@ -13,7 +14,8 @@
         <h1>single letter variable names are good</h1>
     </c:if>
 <script>
-<%--    <%@include file="js/test.js"%>--%>
+<%--    this is just a demo if using a javascript file... see concole to see hello world!--%>
+    <%@include file="js/test.js"%>
 </script>
 </body>
 </html>

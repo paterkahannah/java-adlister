@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: user
-  Date: 6/30/21
-  Time: 12:06 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     if (request.getMethod().equalsIgnoreCase("post")) {
@@ -22,6 +15,7 @@
 </head>
 <body>
 <h1>HEADER</h1>
+<%--ACTION means where to send the form data--%>
 <form method="POST" action="/login.jsp">
     <label for="username">Username</label>
     <input type="text" id="username" name="username" placeholder="username">

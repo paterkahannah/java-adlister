@@ -1,12 +1,3 @@
-
-<%--
-  Created by IntelliJ IDEA.
-  User: jayarredondo
-  Date: 6/30/21
-  Time: 11:24 AM
-  To change this template use File | Settings | File Templates.
---%>
-
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.List" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
