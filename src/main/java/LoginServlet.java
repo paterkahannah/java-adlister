@@ -13,7 +13,6 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect("WEB-INF/profile");
             return;
         }
-
         request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
     }
 
@@ -24,7 +23,6 @@ public class LoginServlet extends HttpServlet {
         boolean user = username.equals("user") && password.equals("userpass"); // created new key
 
         HttpSession session = request.getSession(); // capturing session and storing in value
-//        session.setAttribute("username", username);
 
         if (isAdmin) {
             session.setAttribute("isAdmin", true);
@@ -35,15 +33,5 @@ public class LoginServlet extends HttpServlet {
         }else {
             response.sendRedirect("/login");
         }
-
-//        // saving the session to a variable
-//        HttpSession session = request.getSession();
-//
-//        // setting dark mode attribute on session so it gets used every time (remembered)
-//        String darkMode = request.getParameter("color");
-//        session.setAttribute("darkMode", darkMode);
-//
-//        // remove attribute, not used too often
-//        session.removeAttribute("darkMode");
     }
 }

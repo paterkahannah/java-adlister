@@ -8,7 +8,7 @@ import java.io.IOException;
 
 @WebServlet(name = "ShowAdminPageServlet", urlPatterns = "/admin")
 public class ShowAdminPageServlet extends HttpServlet {
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         HttpSession session = request.getSession();
 
         if ((Boolean)session.getAttribute("isAdmin") == false) { // this must be caste to the correct type, get attribute always return a generic object, we must make it something.
@@ -16,6 +16,6 @@ public class ShowAdminPageServlet extends HttpServlet {
             return;
         }
 
-        request.getRequestDispatcher("secret-admin-page.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/secret-admin-page.jsp").forward(request, response);
     }
 }

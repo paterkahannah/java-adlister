@@ -12,10 +12,10 @@ public class ViewProfileServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
 
-        if ((Boolean)session.getAttribute("user") == null) { // if this equals null it means no user has logged in yet
+        if (session.getAttribute("user") == null) { // if this equals null it means no user has logged in yet
             response.sendRedirect("/login"); // so they will be redirected to login page
             return;
         }
-        request.getRequestDispatcher("WEB-INF/profile.jsp").forward(request, response); // else directedd to profile page
+        request.getRequestDispatcher("WEB-INF/profile.jsp").forward(request, response); // else directed to profile page
     }
 }
