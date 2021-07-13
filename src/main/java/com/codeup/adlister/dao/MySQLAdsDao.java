@@ -22,7 +22,7 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
-    public List<Ad> all() {
+    public List<Ad> all() { // no need to prepare statement here because no user input is involved!
         Statement stmt = null;
         try {
             stmt = connection.createStatement();
@@ -54,17 +54,16 @@ public class MySQLAdsDao implements Ads {
     //    LECTURE MATERIAL
     @Override
     public Ad getOne(long id) {
+        String sql = "SELECT FROM ads WHERE id = ?;";
         try {
-            Statement stmt = connection.createStatement();
-            stmt.executeQuery("SELECT FROM ads WHERE id = " + id);
-            ResultSet rs = stmt.getGeneratedKeys();
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setLong(1, id);
+            ResultSet rs = stmt.executeQuery(); // because using just SELECT, if modifying data we'd use executeUpdate()
             return extractAd(rs);
         } catch (SQLException e) {
             throw new RuntimeException("Error creating a new ad.", e);
         }
     }
-
-
 //
 
     private String createInsertQuery(Ad ad) {

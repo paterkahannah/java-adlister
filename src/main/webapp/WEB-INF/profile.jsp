@@ -9,8 +9,7 @@
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
     <div class="container">
-        <h1>Welcome, ${sessionScope.username}!</h1>
-<%--        FIGURE THIS OUT--%>
+        <h1>Welcome, <c: out value="${sessionScope.user.username}" />!</h1>
     </div>
 
 </body>
